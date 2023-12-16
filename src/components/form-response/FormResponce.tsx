@@ -5,6 +5,8 @@ import { Button } from "ui/button/Button";
 import { useNavigate } from "react-router-dom";
 import { RoutePath } from "pages/routeConfig";
 import classNames from "classnames";
+import { useDispatch } from "react-redux";
+import { resetFormDataAction } from "storage/form/formDataActions";
 
 type TFormResponceProps = {
     success: boolean
@@ -13,10 +15,16 @@ type TFormResponceProps = {
 
 export const FormResponce = ({success, onClose}: TFormResponceProps) => {
     const navigate = useNavigate();
+    const dispatch = useDispatch();
+
+    const onFinish = () => {
+        dispatch(resetFormDataAction())
+        navigate(RoutePath.main)
+    }
 
     const handleButtonClick = () => {
         success
-            ? navigate(RoutePath.main)
+            ? onFinish()
             : onClose()
     }
     return (

@@ -1,4 +1,4 @@
-import { SET_FORM_DATA, SET_FORM_STEP } from "./formDataActionTypeNames";
+import { RESET_FORM_DATA, SET_FORM_DATA, SET_FORM_STEP } from "./formDataActionTypeNames";
 import { TFormDataActions } from "./types/formDataActionTypes";
 import { TFormDataState, TStateFormData } from "./types/formDataReducerTypes";
 
@@ -24,7 +24,9 @@ export function formDataReducer(state = initialState, action: TFormDataActions) 
         case SET_FORM_STEP:
             return { ...state, currentStep: action.payload }
         case SET_FORM_DATA:
-            return { ...state, data: {...state.data, ...action.payload} as TStateFormData}
+            return { ...state, data: { ...state.data, ...action.payload } as TStateFormData }
+        case RESET_FORM_DATA:
+            return initialState
         default:
             return state
     }
