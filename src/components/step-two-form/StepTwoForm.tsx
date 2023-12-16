@@ -104,7 +104,7 @@ export const StepTwoForm = memo(({ onSubmitForm, onClickBack }: TStepTwoFormProp
             </div>
             <div className={s.input_group}>
                 <p className={s.input_group__title}>Radio группа</p>
-                {errors?.checkbox && <p className='errorMessage'>{errors.checkbox.message}</p>}
+                {errors?.radio && <p className='errorMessage'>{errors.radio.message}</p>}
                 {checkboxRadioGroupData.map((item, index) => (
                     <FormInput {...register("radio", formDataConstants.radio.register)}
                         type="radio"
