@@ -98,6 +98,7 @@ export const MainInfo = () => {
                     onFocus={onTelInputFoced}
                     onKeyDown={onKeyTelDown}
                     extraClass={s.mainInfo_input}
+                    autoComplete="off"
                     
                 />
                 <FormInput {...emailRegister}
