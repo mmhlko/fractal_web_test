@@ -1,0 +1,15 @@
+.input_wrapper {
+    display: flex;
+    gap: 20px;
+}
+
+.deleteIcon {
+    cursor: pointer;
+    margin-top: 12px;
+}
+.input_group {
+    margin-bottom: 24px;
+    &__title {
+        margin-bottom: 8px;
+    }
+}

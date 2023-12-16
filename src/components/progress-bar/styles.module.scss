@@ -1,0 +1,79 @@
+.wrapper {
+    margin-bottom: 67px;
+    position: relative;
+
+    .scale {
+        width: 100%;
+        height: 8px;
+        background-color: rgba(0, 0, 0, 0.08);
+
+        &_50 {
+            position: relative;
+            left: 4px;
+            width: 50%;
+            height: 100%;
+            background-color: var(--color-purple);
+        }
+
+        &_100 {
+            position: relative;
+            left: 4px;
+            width: calc(100% - 8px);
+            height: 100%;
+            background-color: var(--color-purple);
+        }
+    }
+
+    .step_circle {
+        display: block;
+        background-color: #A6A6A6;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        position: absolute;
+        top: -4px;
+
+        &_1 {
+            left: 0;
+        }
+
+        &_2 {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        &_3 {
+            right: 0;
+        }
+
+        &_active {
+            background-color: var(--color-white);
+            border: 6px solid var(--color-purple);
+        }
+
+        &_done {
+            border-color: var(--color-purple);
+            background-color: var(--color-purple);
+            background-repeat: no-repeat;
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+            background-size: 50% 50%;
+            background-position: calc(100% - 4px) center;
+        }
+
+        .step_number {
+            top: 20px;
+            left: 2px;
+            position: absolute;
+            font-size: 14px;
+
+            &_done {
+                color: var(--color-purple);
+            }
+
+            &_current {
+                font-weight: 700;
+            }
+        }
+    }
+
+}

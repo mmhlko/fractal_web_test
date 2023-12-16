@@ -1,0 +1,22 @@
+.button {
+    border: none;
+    background-color: var(--color-purple);
+    padding: 10px 12px;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    &:hover {
+        background-color: rgb(81, 127, 228);
+    }
+
+    &_secondary {
+        border: 1.5px solid var(--color-purple);
+        background-color: transparent;
+        color: var(--color-purple);
+        &:hover {
+            background-color: transparent;
+        }
+    }
+}
